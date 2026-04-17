@@ -1,2 +1,5 @@
+[web_servers]
 thomas@192.168.1.166
+
+[db_servers]
 back-end

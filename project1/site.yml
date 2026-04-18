@@ -31,6 +31,14 @@
       state: latest
     when: ansible_distribution == "Ubuntu"
 
+  - name: start apache2
+    tags: httpd,apache,Ubuntu
+    service: 
+      name: apache2
+      state: started
+      enabled: yes
+    when: ansible_distribution == "Ubuntu"
+
   - name: copy the directory
     tags: apache apache2 libapache2-mod-php
     copy:

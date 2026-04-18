@@ -3,3 +3,7 @@ bastion
 
 [db_servers]
 back-end
+
+[workstations]
+bastion
+back-end

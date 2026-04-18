@@ -1,5 +1,5 @@
 [web_servers]
-thomas@192.168.1.166
+bastion
 
 [db_servers]
 back-end

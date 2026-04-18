@@ -18,7 +18,7 @@
       update_cache: yes
     when: ansible_distribution == "Ubuntu" 
 
-- hosts: web_servers
+- hosts: bastion
   become: true
   tasks:
 
@@ -30,6 +30,15 @@
         - libapache2-mod-php
       state: latest
     when: ansible_distribution == "Ubuntu"
+
+  - name: copy the directory
+    tags: apache apache2 libapache2-mod-php
+    copy:
+      src:  defaults_file.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
 
 - hosts: db_servers
   become: true

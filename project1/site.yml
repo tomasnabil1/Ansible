@@ -16,6 +16,7 @@
     tags: Ubuntu
     apt: 
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "Ubuntu" 
 
 - hosts: bastion

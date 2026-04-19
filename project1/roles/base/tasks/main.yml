@@ -1,0 +1,6 @@
+  - name: add ssh to THomas
+    tags: always
+    authorized_key: 
+      user: THomas
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC99CYIxyvheGUfZGmuBBi6gnwyQBHFfPKGkw2KtmqR6kqe3fDLoPUiSp4sPP/NDUwLxzyv38IipgdnrFr1j9ex0Iif4+F0b513d+ZTmasvUsLO90ue+40VYBQzbgTPcU5/DzlQ6KwIdDA1hQT3b9LB3PkjbkDCfqnDkR4/jNvkx/duinEmwpOwiu+DUuMLT5kFteRrYvLpMtn4aGqJTsDzC3G6WclyeG9aE/sz0z3UGZVKJrrFG8gH5gVqGE4CJsSad4WZq/QKNpg9Deae8wAKqkQzHHDNlNbN3OmCqEV4gECpjnUTaDFNj4op0fjBpwFbDHF0Y6736b1IHEVEa1pS77JIVNTUGh6MUQSEXCSP6bOy0GyCqQzgVxsVh3LIlw1wEL9sCxTFvgQSF3ftFsIJFfGvXCTJWVvFTVTDCTml8AqWehMcsV83HNhWsHs/8LwdBl5WWta2TkagmyHSAYTlQFcyoHZU0++I278PDkz0472vsL0wsZ9ABeyUwJKKPKsLvRO/oERE1qw5hd4o7yK27kQjRwChlfJznaZWZBHl1oBJEZSw0NLjeC7fIMaEeLOzwRE8qhgFjjPy+3efbq17sKUqSlp4387sEjVabroFJnL3cghn+JzuauWfPTecaeVPyGaCgG8vlcGB5bb/hAi3A3Ilk8/gH+s64FJ1ib1IMw==
+    

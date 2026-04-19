@@ -4,7 +4,6 @@
   become: true
   pre_tasks:
 
-
   - name: install updates for (CentOS)
     tags: CentOS
     dnf:
@@ -19,68 +18,27 @@
     changed_when: false
     when: ansible_distribution == "Ubuntu" 
 
+- hosts: all 
+  become: true
+  roles: 
+    - base
+
+
 - hosts: bastion
   become: true
-  tasks:
+  roles:
+    - web_servers
 
-  - name: install apache2 and libapache2-mod-php packages
-    tags: apache apache2 libapache2-mod-php
-    apt:
-      name: 
-        - apache2
-        - libapache2-mod-php
-      state: latest
-    when: ansible_distribution == "Ubuntu"
-
-  - name: start apache2
-    tags: httpd,apache,Ubuntu
-    service: 
-      name: apache2
-      state: started
-      enabled: yes
-    when: ansible_distribution == "Ubuntu"
-
-  - name: copy the directory
-    tags: apache apache2 libapache2-mod-php
-    copy:
-      src:  defaults_file.html
-      dest: /var/www/html/index.html
-      owner: root
-      group: root
-      mode: 0644
 
 - hosts: db_servers
   become: true
-  tasks:
+  roles:
+    - db_servers
 
-  - name: install mariadb package for (CentOS)
-    tags: mariadb CentOS
-    dnf:
-      name: mariadb
-      state: latest
-    when: ansible_distribution == "CentOS"
-
-  - name: install mariadb package for (Ubuntu)
-    tags: Ubuntu mariadb
-    apt:
-      name: mariadb-server
-      state: latest
-    when: ansible_distribution == "Ubuntu"
-    
 
 - hosts: workstations
   become: true 
-  tasks: 
+  roles: 
+    - workstations
 
-  - name: install unzip 
-    package:
-      name: unzip
 
-  - name: install terraform
-    unarchive:
-      src: https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
-      dest: /usr/local/bin
-      remote_src: yes
-      mode: 0755
-      owner: root
-      group: root
